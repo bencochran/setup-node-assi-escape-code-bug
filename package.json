@@ -1,0 +1,11 @@
+{
+  "name": "setup-node-assi-escape-code-bug",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ben Cochran",
+  "license": "MIT",
+  "scripts": {
+    "hello": "node index.js",
+    "print-cache-dir": "yarn cache dir | sed \"s/\\x1B/\\\\\\x1B/g\""
+  }
+}
