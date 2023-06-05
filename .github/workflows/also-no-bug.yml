@@ -1,0 +1,20 @@
+on: [push, pull_request]
+
+env:
+  FORCE_COLOR: true
+
+jobs:
+  also-no-bug:
+    name: also no bug
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      env:
+        FORCE_COLOR: 0
+      with:
+        node-version: current
+        cache: 'yarn'
+    - run: yarn install --frozen-lockfile
+    - run: yarn run hello
+    - run: yarn run print-cache-dir
